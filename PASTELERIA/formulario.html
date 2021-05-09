@@ -1,0 +1,114 @@
+<!--<?php
+	$servidor="localhost/8081";
+	$usuario="root";
+	$clave="";
+	$baseDeDatos="karel_formulario";
+
+	$enlace = mysqli_connect($servidor,$usuario,$clave,$baseDeDatos);
+	if(!enlace){
+		echo"error en la conexión con el servidor";
+	}
+?>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pedidos</title>
+	<link rel="stylesheet" href="archivos_norm/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="archivos_norm/modernizr-custom.js"></script>
+</head>
+<body>
+
+	<div id="back">
+		<header>
+			<div class="cab">
+				<nav>
+					<ul>
+						<li><a class="left" href="principal.html">inicio</a></li>
+						<li><a class="left" href="pedido.html">login</a></li>
+						<li><a class="right" href="#">products</a></li>
+						
+					</ul>
+				</nav>
+				<div class="logo_img">
+					<a href="">
+						<img src="imagenes/bottomless_logo.png" alt="Logo Karel" width="150" height="150">
+					</a>
+					
+				</div>
+				<div class="logo">
+					<img src="css/pintura.png" width="450" height="150">
+					<p><a href="principal.html">Pasteleria Karel</a></p>
+				</div>
+				
+			</div>
+		</header>
+	
+		<section id="cuestionario">
+			<form method="GET" action="#127.0.0.1/PASTELERIA/registrar.php" name="formulario">
+				<legend>Realizar pedido</legend>
+				<label for = "nombre">Nombre</label>
+				<input type="text" name="nombre" placeholder="Javier Oroña" required > <br>
+				<label for = "cantidad">Cantidad</label>
+				<input type="text" name="cantidad" placeholder="0" required > <br>
+				<label for = "direccion">Dirección</label>
+				<input type="text" name="direccion" placeholder="tabachines, amatista #843" required > <br>
+				<label for = "telefono">telefono</label>
+				<input type="text" name="telefono" placeholder="3122708525" required > <br>
+				<label for = "comentario">Comentario</label>
+				<textarea name="comentario" rows="5" cols="50" placeholder="Escribe tus especificaciones"> </textarea>
+
+
+				<input type="submit" class="btn" name="registrarse" value="Registrate">
+
+			</form>
+		</section>	
+	
+		
+
+		<div class="w-33">
+		  <div class="center">
+			<button onclick = "alert('Pedido enviado');">Finalizar pedido</button>
+		  </div>
+		</div>
+
+		<?php
+			include("registrar.php")
+		?>
+
+		<footer>
+			<p id= ubi   href="https://www.google.com.mx/maps/preview"> <img src="iconos\ubicacion.png" alt="ubicacion" width="1%" height ="1%">		Constelación 703-572, Manuel M. Diéguez, 28973 Villa de Álvarez, Col</p>
+			<a class="ic" href="https://www.facebook.com"> <img src="iconos\facebook.png" alt="logo de facebook" width="3%" height ="3%"></a>
+			<a class="ic" href="https://www.instagram.com"> <img src="iconos\instagram.png" alt="logo de instagram" width="3%" height ="3%"></a>
+			<a class="ic "href="web.whatsapp.com"> <img src="iconos\whatsapp.png" alt="logo de whatsapp" width="3%" height ="3%"></a>
+			<p>Copyright © PASTELERIA KAREL. Todos los derechos reservados</p>
+
+		</footer>
+	</div>
+ 	
+	
+</body>
+</html>
+<!--
+<?php
+	if(isset($_Post['registrarse'])){
+		$nombre=$_REQUEST["nombre"];
+		$cantidad=$_REQUEST["cantidad"];
+		$direccion=$_REQUEST["direccion"];
+		$telefono=$_REQUEST["telefono"];
+		$num_pedido=rand(1,999);
+
+		$insertarDatos = "INSERT INTO datos VALUES('$nombre',
+													'$cantidad',
+													'$direccion',
+													'$telefono',
+													'$num_pedido')";
+		$ejecutarInsertar = mysqli_master_query($enlace, $insertarDatos);
+
+		if (!$ejecutarInsertar) {
+			echo"Error en la linea de sql";
+		}
+	}
+?-->
